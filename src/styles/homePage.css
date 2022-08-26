@@ -1,0 +1,283 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--darkblueBg);
+}
+
+header {
+    background-color: var(--bgForm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin-bottom: 40px;
+}
+.perfilBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+}
+.perfilBox > img {
+    width: 70px;
+    padding: 10px;
+}
+.perfilBox > h3 {
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-shadow: 0 0 3px var(--black);
+}
+#btnLogout {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+    padding: 5px 30px 7px;
+    background: var(--bgButton);
+    border-radius: 20px;
+    border-style: none;
+    height: 32px;
+    margin-right: 20px;
+}
+.main__container {
+    max-width: 750px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+.main__container__newPost {
+    height: 120px;
+    background-color: var(--lightGrayBoxBgHome);
+    border-radius: 20px;
+    margin-bottom: 60px;
+}
+.main__container__newPost__box {
+    padding: 15px;
+}
+.main__container__newPost__box > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#newPost {
+    width: 100%;
+    border-style: none;
+    background-color: var(--lightGrayBoxBgHome);
+    resize: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--blackTextHome);
+    height: 70px;
+}
+::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--darkBlueTextHome);
+}
+#btnAdcNewPost {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--white);
+    padding: 0 25px 2px;
+    border-radius: 20px;
+    background-color: var(--bgButton);
+    border-style: none;
+    height: 30px;
+}
+#btnAdcNewPost::after {
+    content: "+";
+}
+
+.main__container__posts > ul {
+    display: flex;
+    flex-direction: column;
+}
+.main__container__posts__cardPost {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    background-color: var(--lightGrayBoxBgHome);
+    border-radius: 20px;
+    padding: 15px;
+}
+.main__container__posts__cardPost__largerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.main__container__posts__cardPost__largerBox > img {
+    height: 80px;
+}
+.main__container__posts__cardPost__largerBox__textBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.main__container__posts__cardPost__largerBox__textBox > h2 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--blackTextHome);
+}
+.main__container__posts__cardPost__largerBox__textBox > p {
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--darkBlueTextHome);
+}
+.main__container__posts__cardPost__smallerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.main__container__posts__cardPost__smallerBox > small {
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--darkBlueTextHome);
+}
+.main__container__posts__cardPost__smallerBox__btnBox > button {
+    border-style: none;
+    margin: 0 10px;
+}
+
+.modalEdit {  
+    background-color: var(--transparentWhite);
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.modalEditBox {
+    background-color: var(--bgForm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 450px;
+    width: 80%;
+}
+.modalEditBox > form {
+    display: flex;
+    flex-direction: column;
+}
+.modalEditBox > h2 {
+    padding: 20px 0 50px;
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--white);
+    text-shadow: 0 0 8px var(--black);
+}
+#editPost {
+    margin: 0 auto 30px;
+    border: 1px solid var(--bgBody);
+    border-radius: 10px;
+    height: 200px;
+    width: 90%;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--blackTextHome);
+    padding: 20px 0 0 10px;
+    resize: none;
+}
+#btnModalEdit {
+    margin: 0 65px 40px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    background-color: var(--bgButton);
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px 0;
+}
+
+.modalDelete {
+    background-color: var(--transparentWhite);
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.modalDeleteBox {
+    background-color: var(--bgForm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 450px;
+    width: 80%;
+}
+.modalDeleteBox > h2 {
+    padding: 40px 10px 50px;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--white);
+    text-shadow: 0 0 8px var(--black);
+    text-align: center;
+}
+#btnModalDelete {
+    margin: 0 65px 25px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    background-color: var(--redDelete);
+    border-radius: 20px;
+    border-style: none;
+    padding: 10px 45px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 769px){
+    header {
+        padding: 0 100px;
+    }
+    #btnAdcNewPost {
+        font-size: 16px;
+    }
+    #btnAdcNewPost::after {
+        content: "Postar";
+    }
+    .main__container__posts__cardPost__largerBox {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .main__container__posts__cardPost__largerBox > img {
+        height: 100px;
+        margin-top: 10px;
+    }
+    .main__container__posts__cardPost__largerBox__textBox {
+        align-items: flex-start;
+        padding: 10px 60px 0 40px;
+    }
+    .main__container__posts__cardPost__largerBox__textBox > p {
+        margin-bottom: 0;
+    }
+    .main__container__posts__cardPost__smallerBox {
+        flex-direction: row-reverse;
+        align-items: baseline;
+        width: 100%;
+        padding-right: 10px;
+    }
+    .main__container__posts__cardPost__smallerBox > small {
+        margin-bottom: 0;
+    }
+    .main__container__posts__cardPost__smallerBox__btnBox > button {
+        margin: 0 5px;
+    }
+}
