@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Blog M2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/homePage.css">
+</head>
+<body>
+    <header>
+        <div class="perfilBox">
+            <img src="../images/image 4.png" alt="gatinho">
+            <h3>Gatinho Fofo</h3>
+        </div>
+        <button id="btnLogout">Logout</button>
+    </header>
+    <main class="main__container">
+        <section class="main__container__newPost">
+            <div class="main__container__newPost__box">
+                <form>
+                    <textarea name="newPost" id="newPost" cols="30" rows="4" placeholder="No que está pensando?"></textarea>
+                    <button id="btnAdcNewPost"></button>
+                </form>
+            </div>
+        </section>
+        <section class="main__container__posts">
+            <ul>
+                
+                <li class="main__container__posts__cardPost">
+                    <div class="main__container__posts__cardPost__largerBox">
+                        <img src="../images/image 4.png" alt="gatinho">
+                        <div class="main__container__posts__cardPost__largerBox__textBox">
+                            <h2>Gatinho Fofo</h2>
+                            <p>Lorem ipsum dolor sit amet. Et iste labore ut similique consequuntur et consequuntur harum est repellendus quia 33 tempore similique. Nam reprehenderit vero eos maxime consequatur At nihil facere vel quam nemo eum perspiciatis maiores qui atque quia.</p>
+                        </div>
+                    </div>
+                    <div class="main__container__posts__cardPost__smallerBox">
+                        <small>22/08/2022</small>
+                        <div class="main__container__posts__cardPost__smallerBox__btnBox">
+                            <button id="btnEdit"><img src="../assets/edit 1.png" alt="editar"></button>
+                            <button id="btnDelete"><img src="../assets/trash-bin 1.png" alt="lixo"></button>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="main__container__posts__cardPost">
+                    <div class="main__container__posts__cardPost__largerBox">
+                        <img src="../images/image 2.png" alt="gatinho">
+                        <div class="main__container__posts__cardPost__largerBox__textBox">
+                            <h2>Esquilo Bonito</h2>
+                            <p>Lorem ipsum dolor sit amet. Et iste labore ut similique consequuntur et consequuntur harum est repellendus quia 33 tempore similique. Nam reprehenderit vero eos maxime consequatur At nihil facere vel quam nemo eum perspiciatis maiores qui atque quia.</p>
+                        </div>
+                    </div>
+                    <div class="main__container__posts__cardPost__smallerBox">
+                        <small>22/08/2022</small>
+                        <div class="main__container__posts__cardPost__smallerBox__btnBox">
+                            <button hidden id="btnEdit"><img src="../assets/edit 1.png" alt="editar"></button>
+                            <button hidden id="btnDelete"><img src="../assets/trash-bin 1.png" alt="lixo"></button>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </section>
+    </main>
+
+    <section class="modalEdit hidden">
+        <div class="modalEditBox">
+            <h2>Editar</h2>
+            <form>
+                <textarea name="editPost" id="editPost" cols="30" rows="5" placeholder="Estou mudando meu comentário"></textarea>
+                <button id="btnModalEdit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="modalDelete hidden">
+        <div class="modalDeleteBox">
+            <h2>Deseja deletar esse post?</h2>
+            <button id="btnModalDelete">Deletar</button>
+        </div>
+    </section>
+
+</body>
+</html>
