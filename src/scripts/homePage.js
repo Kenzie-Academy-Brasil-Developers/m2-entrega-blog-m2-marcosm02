@@ -81,7 +81,7 @@ class Render {
         divSmallerBox.append(small)
         li.append(divLargerBox, divSmallerBox)
 
-        if(element.user.id === id){
+        if(element.user.id == id){
             const divSmallerBoxBtnBox = document.createElement('div')
             divSmallerBoxBtnBox.classList.add("main__container__posts__cardPost__smallerBox__btnBox")
 
