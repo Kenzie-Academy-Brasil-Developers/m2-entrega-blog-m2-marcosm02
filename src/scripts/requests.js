@@ -41,6 +41,7 @@ export class Api {
             },
             body: JSON.stringify(body)
         })
+        .then(res => window.location.assign('../pages/homePage.html'))
     }
 
     static async userPage(){
