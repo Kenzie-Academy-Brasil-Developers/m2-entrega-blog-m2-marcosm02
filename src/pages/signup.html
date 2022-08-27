@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Blog M2 - cadastre-se</title>
 </head>
 <body>
@@ -23,6 +24,7 @@
         <input type="text" name="userName" id="userName" placeholder="Digite seu nome de usuário">
         <input type="email" name="email" id="email" placeholder="Digite seu email" required>
         <input type="text" name="userProfile" id="userProfile" placeholder="Digite a URL da foto de Perfil">
+        <span class="inactive"></span>
         <input type="password" name="password" placeholder="Digite sua senha" id="password" required>
 
         <button type="submit" id="submit">Cadastrar</button>
@@ -32,6 +34,7 @@
             <a href="../../index.html" id="handleLogin">Fazer login</a>
         </p>
     </form>
-    <script type="module" src=""></script>
+    <script type="module" src="../scripts/signup.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

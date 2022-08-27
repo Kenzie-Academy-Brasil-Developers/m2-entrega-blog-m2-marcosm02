@@ -20,4 +20,14 @@ export class Api {
         })
         return userLogin
     }
+
+    static async signUp(body) {
+        const createUser = await fetch(`${this.baseUrl}/users/register`, {
+            method: 'POST',
+            headers: this.headers,
+            body: JSON.stringify(body)
+        })
+        .then(data => data.json())
+        return createUser
+    }
 }
