@@ -21,6 +21,7 @@ header {
 .perfilBox > img {
     width: 70px;
     padding: 10px;
+    border-radius: 50%;
 }
 .perfilBox > h3 {
     font-weight: 700;
@@ -110,6 +111,9 @@ header {
 }
 .main__container__posts__cardPost__largerBox > img {
     height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 .main__container__posts__cardPost__largerBox__textBox {
     display: flex;
@@ -247,11 +251,20 @@ header {
     header {
         padding: 0 100px;
     }
+    #btnLogout:hover{
+        color: var(--bgButton);
+        background: var(--white);
+        cursor: pointer;
+    }
     #btnAdcNewPost {
         font-size: 16px;
+        cursor: pointer;
     }
     #btnAdcNewPost::after {
         content: "Postar";
+    }
+    .main__container__posts__cardPost {
+        align-items: flex-start;
     }
     .main__container__posts__cardPost__largerBox {
         flex-direction: row;
@@ -259,6 +272,8 @@ header {
     }
     .main__container__posts__cardPost__largerBox > img {
         height: 100px;
+        width: 100px;
+        object-fit: cover;
         margin-top: 10px;
     }
     .main__container__posts__cardPost__largerBox__textBox {
