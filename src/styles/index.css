@@ -1,4 +1,4 @@
-.inativo {
+.inactive {
     display: none;
 }
 
@@ -18,7 +18,7 @@ img {
 form {
     background: var(--bgForm);
     width: 30%;
-    height: 50%;
+    min-height: 50%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@ form h1 {
     padding-bottom: 30px;
 }
 
-form span.ativo {
+form span.active {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--red);
