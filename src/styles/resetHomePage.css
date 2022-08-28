@@ -1,0 +1,26 @@
+body, header, main, section, div, img, h1, h2, h3, form, button, textarea, ul, li, p, a, small, span {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root{
+    --bgForm: #6495EDBF;
+    --bgButton: #5C5D8D;
+	--bgBody: #454D6B;
+    --black: #000000;
+	--white: #ffffff;
+	--red: #ff0000;
+
+	--transparentWhite: #00000090;
+    --darkblueBg: #444c6c;
+    --redDelete: #FF3F5B;
+    --lightGraytextLogIn: #C3C3C3;    
+    --darkBlueTextHome: #363457;    
+    --lightGrayBoxBgHome: #ECF0F1;
+    --blackTextHome: #030000;
+}

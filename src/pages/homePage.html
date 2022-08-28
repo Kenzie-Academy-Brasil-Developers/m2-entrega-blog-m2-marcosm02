@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/android-chrome-512x512.png" type="image/x-icon">
+    <title>Home - Blog M2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/resetHomePage.css">
+    <link rel="stylesheet" href="../styles/homePage.css">
+</head>
+<body>
+    <header>
+        <div class="perfilBox">
+
+            <img src="" alt="User Avatar">
+            <h3>User Name</h3>
+
+        </div>
+        <button id="btnLogout">Logout</button>
+    </header>
+    <main class="main__container">
+        <section class="main__container__newPost">
+            <div class="main__container__newPost__box">
+                <form>
+                    <textarea name="newPost" id="newPost" cols="30" rows="4" placeholder="No que está pensando?"></textarea>
+                    <button id="btnAdcNewPost"></button>
+                </form>
+            </div>
+        </section>
+        <section class="main__container__posts">
+            <ul>
+                
+            </ul>
+        </section>
+    </main>
+
+    <section class="modalEdit hidden">
+        <div class="modalEditBox">
+            <h2>Editar</h2>
+            <form>
+                <textarea name="editPost" id="editPost" cols="30" rows="5" placeholder="Estou mudando meu comentário"></textarea>
+                <button id="btnModalEdit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="modalDelete hidden">
+        <div class="modalDeleteBox">
+            <h2>Deseja deletar esse post?</h2>
+            <button id="btnModalDelete">Deletar</button>
+        </div>
+    </section>
+
+    <script type="module" src="../scripts/homePage.js"></script>
+    <script type="module" src="../scripts/createPost.js"></script>
+
+</body>
+</html>

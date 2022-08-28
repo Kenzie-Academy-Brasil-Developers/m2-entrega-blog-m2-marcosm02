@@ -41,5 +41,74 @@ export class Api {
             },
             body: JSON.stringify(body)
         })
+        .then(res => window.location.assign('../pages/homePage.html'))
+    }
+
+    static async userPage(){
+        const token = localStorage.getItem('@BlogM2:token')
+        const id = localStorage.getItem('@BlogM2:id')
+        const userInfo = await fetch(`${this.baseUrl}/users/${id}`, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
+        return userInfo
+    }
+
+    static async posts(){
+        const token = localStorage.getItem('@BlogM2:token')
+        const postsList = await fetch(`${this.baseUrl}/posts?page=1`, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
+        return postsList
+    }
+
+    static async getPost(id){
+        const token = localStorage.getItem('@BlogM2:token')
+        const post = await fetch(`${this.baseUrl}//posts/${id}`, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
+        return post.content
+    }
+
+    static async sendEditPost (data, id){
+        const token = localStorage.getItem('@BlogM2:token')
+        const post = await fetch(`${this.baseUrl}//posts/${id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        })
+        .then(data => data.json)
+        return post
+    }
+
+    static async deletePost(id){
+        const token = localStorage.getItem('@BlogM2:token')
+        const deletePostModal = await fetch(`${this.baseUrl}/posts/${id}`, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
     }
 }
