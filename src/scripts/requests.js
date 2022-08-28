@@ -72,4 +72,43 @@ export class Api {
         .catch(err => console.log(err))
         return postsList
     }
+
+    static async getPost(id){
+        const token = localStorage.getItem('@BlogM2:token')
+        const post = await fetch(`${this.baseUrl}//posts/${id}`, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(res => res.json())
+        .catch(err => console.log(err))
+        return post.content
+    }
+
+    static async sendEditPost (data, id){
+        const token = localStorage.getItem('@BlogM2:token')
+        const post = await fetch(`${this.baseUrl}//posts/${id}`, {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        })
+        .then(data => data.json)
+        return post
+    }
+
+    static async deletePost(id){
+        const token = localStorage.getItem('@BlogM2:token')
+        const deletePostModal = await fetch(`${this.baseUrl}/posts/${id}`, {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            }
+        })
+    }
 }

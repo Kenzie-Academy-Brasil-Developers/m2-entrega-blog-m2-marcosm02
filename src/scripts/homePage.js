@@ -40,14 +40,13 @@ class Render {
         const arrPosts = postsList.data
         const ul = document.querySelector("ul")
 
-        arrPosts.forEach((element) => {
-            const cardPost = this.renderPostCard(element)
-
+        arrPosts.forEach(async (element) => {
+            const cardPost = await this.renderPostCard(element)
             ul.appendChild(cardPost)
         })
     }
 
-    static renderPostCard(element){
+    static async renderPostCard(element){
         const id = localStorage.getItem('@BlogM2:id')
 
         const li = document.createElement('li')
@@ -86,14 +85,16 @@ class Render {
             divSmallerBoxBtnBox.classList.add("main__container__posts__cardPost__smallerBox__btnBox")
 
             const btnEdit = document.createElement('button')
-            btnEdit.id = "btnEdit"
+            btnEdit.classList.add("btnEdit")
+            btnEdit.id = element.id
 
             const imgEdit = document.createElement("img")
             imgEdit.src = "../assets/edit 1.png"
             imgEdit.alt = "Editar"
 
             const btnDelete = document.createElement('button')
-            btnDelete.id = "btnDelete"
+            btnDelete.classList.add("btnDelete")
+            btnDelete.id = element.id
 
             const imgDelete = document.createElement("img")
             imgDelete.src = "../assets/trash-bin 1.png"
@@ -103,6 +104,33 @@ class Render {
             btnDelete.appendChild(imgDelete)
             divSmallerBoxBtnBox.append(btnEdit, btnDelete)
             divSmallerBox.appendChild(divSmallerBoxBtnBox)
+
+            btnEdit.addEventListener("click", async (event) => {
+                const modalEdit = document.querySelector(".modalEdit")
+                const modalPostContent = document.getElementById("editPost")
+                const contentEdit = await Api.getPost(btnEdit.id)
+                modalPostContent.value = contentEdit
+                modalEdit.classList.remove('hidden')
+                const btnEditContent = document.getElementById("btnModalEdit")
+                btnEditContent.addEventListener("click", async (event) => {
+                    const data = {
+                        content: `${modalPostContent.value}`
+                    }
+                    await Api.sendEditPost(data, btnEdit.id)
+                    modalEdit.classList.add('hidden')
+                })
+            })
+
+            btnDelete.addEventListener("click", async (event) => {
+                const modalDelete = document.querySelector(".modalDelete")
+                modalDelete.classList.remove('hidden')
+                const btnDeletePost = document.getElementById("btnModalDelete")
+                btnDeletePost.addEventListener("click", async (event) => {
+                    await Api.deletePost(btnDelete.id)
+                    modalDelete.classList.add('hidden')
+                    location.reload()
+                })
+            })
         }
 
         return li
